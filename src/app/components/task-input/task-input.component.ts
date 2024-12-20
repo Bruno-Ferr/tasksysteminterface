@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-task-card',
+  selector: 'app-task-input',
   imports: [FormsModule],
-  templateUrl: './task-card.component.html',
-  styleUrl: './task-card.component.scss'
+  templateUrl: './task-input.component.html',
+  styleUrl: './task-input.component.scss'
 })
 export class TaskCardComponent {
-  searchInput = 'Search tasks'
+  taskInput = "What's your next annotation?"
 }
