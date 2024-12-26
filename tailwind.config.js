@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import phosphorIcons from "phosphor-icons-tailwindcss";
 
-module.exports = {
+export default {
   darkMode: 'class',
   content: [
     "./src/**/*.{html,ts}",
