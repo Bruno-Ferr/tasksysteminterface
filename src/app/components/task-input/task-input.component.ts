@@ -7,6 +7,6 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './task-input.component.html',
   styleUrl: './task-input.component.scss'
 })
-export class TaskCardComponent {
+export class TaskInputComponent {
   taskInput = "What's your next annotation?"
 }

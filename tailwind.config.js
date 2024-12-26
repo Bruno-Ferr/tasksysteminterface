@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import phosphorIcons from "phosphor-icons-tailwindcss";
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -31,6 +33,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [phosphorIcons()],
 }
 
