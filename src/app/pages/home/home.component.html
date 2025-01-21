@@ -1,9 +1,25 @@
 <div class="dark min-h-screen">
-  <main class="bg-light-background dark:bg-dark-background min-h-screen">
-    <h1 class="text-light-text dark:text-dark-text">Home</h1>
-    <app-task-input></app-task-input>
-    <div class="w-96">
-      <app-task-layout />
+  <main class=" bg-light-background dark:bg-dark-background  min-h-screen flex flex-col items-center 
+    justify-center text-light-text dark:text-dark-text"
+  >
+    <div class="max-w-[1120px]">
+      <div class="flex text-light-text dark:text-dark-text text-4xl">
+        <h1 class="bg-rose-400 mb-8">Wellcom</h1><span class="text-4xl">e, Bruno</span>
+      </div>
+      <div class="self-start flex-col items-center mb-6">
+        <h2 class="text-3xl">{{today}}</h2>
+        <p data-testid="active_tasks_value">{{activeTasks()}} task today</p>
+      </div>
+      <div>
+        <app-week-date-picker> </app-week-date-picker>
+      </div>
+      <app-task-input (taskSubmit)="taskSubmit($event)"></app-task-input>
+      <div class="mt-2">
+        <!-- For com o array de tasks -->
+          @for (task of tasks; track task) {
+            <app-task-layout taskId={{task.id}} task={{task.title}} type={{task.type}} [isDone]="task.isDone" [index]="$index" (toggleIsDone)="updateTask($event)" />
+          }
+      </div>
     </div>
   </main>
 </div>

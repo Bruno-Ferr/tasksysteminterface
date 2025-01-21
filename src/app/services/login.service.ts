@@ -11,7 +11,7 @@ export class LoginService {
   readonly baseUrl = "http://localhost:3000"
 
   login(email: string, password: string) {
-    return this.http.post<LoginResponse>(`${this.baseUrl}/auth/login`, {email, password}) .pipe(
+    return this.http.post<LoginResponse>(`${this.baseUrl}/auth/login`, {email, password}).pipe(
       tap((value) => {
         sessionStorage.setItem("authToken", value.access_token);
       })

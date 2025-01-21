@@ -1,0 +1,28 @@
+<div class="flex justify-between gap-4 py-3">
+  <button class="hover:bg-light-secondary hover:dark:bg-dark-secondary rounded-full" (click)="previousWeek()" data-testid="previous-week">
+    <i class="ph ph-[caret-left]"></i>
+  </button>
+  <div 
+    *ngFor="let date of weekDates; index as i" 
+    class="flex flex-col items-center w-12 cursor-pointer relative py-2"
+    [ngClass]="{
+      'bg-light-secondary dark:bg-dark-quartiary rounded-2xl': date.isSelected
+    }"
+    (click)="changeSelectedDay(i)"
+    data-testid="selected-day-bg"
+  >
+    <div class="font-medium text-light-text  dark:text-dark-text mb-1">{{ date.day }}</div>
+    <div class="text-sm text-light-textSecondary dark:text-dark-textSecondary capitalize mb-2">{{ date.dayName }}</div>
+    <div 
+      *ngIf="date.isSelected" 
+      class="absolute bottom-1 w-2 h-2  rounded-xl"
+      [ngClass]="{
+        'bg-light-text dark:bg-dark-text rounded-2xl': date.isSelected && date.isToday,
+        'bg-light-background dark:bg-dark-secondary rounded-2xl': date.isSelected && !date.isToday,
+      }"
+    ></div>
+  </div>
+  <button class="hover:bg-light-secondary hover:dark:bg-dark-secondary rounded-full" (click)="nextWeek()" data-testid="next-week">
+    <i class="ph ph-[caret-right]"></i>
+  </button>
+</div>

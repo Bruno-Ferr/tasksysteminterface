@@ -12,6 +12,7 @@ export default {
         light: {
           background: '#fdfcff',
           secondary: '#f2e8ff',
+          quartiary: '#eee0ff',
           text: '#2a2734',
           textSecondary: '#7a718e',
           button: '#d946ef',

@@ -1,13 +1,13 @@
-<div class="flex gap-2">
-  <input type="text" [(ngModel)]="taskInput"
-  class="p-2 px-2 rounded w-80 dark:bg-dark-quartiary dark:text-dark-text" />
-  <select class="p-2 px-2 w-32 rounded dark:bg-dark-quartiary dark:text-dark-text"> 
-    <option value="1">Task</option>
-    <option value="2">Event</option>
-    <option value="3">Important</option>
-    <option value="4">Note</option>
+<div class="flex gap-2 mt-2">
+  <input type="text" placeholder="What's your next note?" [(ngModel)]="taskInput"
+  class="p-2 px-2 rounded w-80 bg-light-secondary dark:bg-dark-quartiary dark:text-dark-text" />
+  <select class="p-2 px-2 w-32 rounded bg-light-secondary dark:bg-dark-quartiary dark:text-dark-text" [(ngModel)]="taskType"> 
+    <option value="ph-[dot]">Task</option>
+    <option value="ph-[circle]">Event</option>
+    <option value="ph-[asterisk--bold]">Important</option>
+    <option value="ph-[minus]">Note</option>
     <option value="5">Insight</option>
-    <option value="6">Search</option>
+    <option value="ph-magnifying-glass">Search</option>
   </select>
-  <button class="px-4 py-2 rounded bg-light-button text-white hover:bg-light-buttonHover dark:bg-dark-button dark:hover:bg-dark-buttonHover">Add</button>
+  <button class="px-4 py-2 rounded bg-light-button text-white hover:bg-light-buttonHover dark:bg-dark-button dark:hover:bg-dark-buttonHover" (click)="submitTask()">Add</button>
 </div>

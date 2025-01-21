@@ -30,7 +30,6 @@ export class LoginComponent {
       next: () => {this.toastService.success("Successfully logged in!"), this.router.navigate(["/"])},
       error: () => this.toastService.error("Something went wrong!")
     })
-    
   }
 
   get email() {

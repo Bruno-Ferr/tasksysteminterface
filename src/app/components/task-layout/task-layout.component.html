@@ -1,7 +1,17 @@
-<div class="flex items-center justify-between dark:text-dark-text w-full">
+<div 
+  (click)="toggleDone()"
+  [ngClass]="{
+    'bg-light-secondary dark:bg-dark-secondary shadow-none': isDone,
+  }"
+  class="
+    flex items-center justify-between dark:text-dark-text w-full mt-4 p-3
+    border border-light-secondary dark:border-dark-secondary rounded-md cursor-pointer
+    shadow-md shadow-light-secondary dark:shadow-dark-secondary hover:bg-light-secondary
+    hover:dark:bg-dark-secondary  hover:shadow-none transition-all"
+  >
   <div class="flex items-center gap-2">
     <i class='ph' [class]="type"></i> <!-- Deve estar errado -->
-    <p>{{message}}</p>
+    <p>{{task}}</p>
   </div>
   <i class="ph ph-[list--bold]"></i>
 </div>
